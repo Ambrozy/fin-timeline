@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#F3F3F3">
+  <meta name="msapplication-navbutton-color" content="#F3F3F3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <title>Таймлайн событий</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+<link href="index.css?1435820fd8d6146f6410" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header__controls">
+        <button type="button" class="link header__sorter-item -down js-sorter-date">Сортировать по дате</button>
+        <button type="button" class="link header__sorter-item -nosort js-sorter-type">Сортировать по типу</button>
+      </div>
+      <div class="header__controls">
+        <a class="header__btn btn js-add" href="#addnews" data-type="news">Добавить новость</a>
+        <a class="header__btn btn js-add" href="#addtransaction" data-type="transaction">Добавить транзакцию</a>
+      </div>
+    </div>
+    <div class="content js-content"></div>
+  </div>
+
+  <div class="modal-bg js-modal-bg"></div>
+  <div class="modal js-modal" data-index="view">
+    <button type="button" class="modal__close js-modal-close"></button>
+    <div class="modal__header"></div>
+    <div class="modal__content js-modal-content"></div>
+    <div class="modal__footer"></div>
+  </div>
+  <div class="modal js-modal" data-index="transaction">
+  <button type="button" class="modal__close js-modal-close"></button>
+  <div class="modal__header">Добавление транзакции</div>
+  <form class="modal__content js-add-form" method="POST" name="transaction">
+    <input type="hidden" name="type" value="transaction" />
+    <label class="form-line">
+  <div class="form-line__title">Сумма (введите отрицательное число, если расход):</div>
+  <div class="form-group">
+    <input type="number" name="sum" value="0" required />
+    <select name="currency">
+      <option value="rub" selected>Рубли</option>
+      <option value="dollar">Доллары</option>
+      <option value="euro">Евро</option>
+    </select>
+  </div>
+</label>
+<label class="form-line">
+  <div class="form-line__title">От кого/кому:</div>
+  <input type="text" name="user" placeholder="Введите ФИО" required />
+</label>
+<label class="form-line">
+  <div class="form-line__title">Описание:</div>
+  <textarea name="text" placeholder="Введите" rows="5"></textarea>
+</label>
+
+    <div class="modal__footer">
+      <button class="btn modal__btn -danger js-modal-close" type="button">Отмена</button>
+      <button class="btn modal__btn">Добавить</button>
+    </div>
+  </form>
+</div>
+
+  <div class="modal js-modal" data-index="news">
+  <button type="button" class="modal__close js-modal-close"></button>
+  <div class="modal__header">Добавление Новости</div>
+  <form class="modal__content js-add-form" method="POST" name="news">
+    <input type="hidden" name="type" value="news" />
+    <label class="form-line">
+  <div class="form-line__title">Заголовок новости:</div>
+  <input type="text" name="title" placeholder="Введите" required />
+</label>
+<label class="form-line">
+  <div class="form-line__title">Содержание новости:</div>
+  <textarea name="text" placeholder="Введите" rows="10" required></textarea>
+</label>
+
+    <div class="modal__footer">
+      <button class="btn modal__btn -danger js-modal-close" type="button">Отмена</button>
+      <button class="btn modal__btn">Добавить</button>
+    </div>
+  </form>
+</div>
+
+<script src="index.js?1435820fd8d6146f6410"></script></body>
+</html>
