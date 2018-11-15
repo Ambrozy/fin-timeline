@@ -1,0 +1,39 @@
+<%- require('../_partials/case-header.ejs')() %>
+<section class="case -dark">
+  <div class="container">
+    <h1 class="title">Оклейка Антигравийной Пленкой</h1>
+    <div class="title-props">Верстка, программирование</div>
+    <!-- Задача -->
+    <div class="case-block">
+      <h3 class="case-block-title">Задача от заказчика</h3>
+      <p>Создать landing page с блоками: Акция, Клиенты, Преимущества, Услуги, Отзывы и Контакты. Лендинг только для компьютеров, без адаптации под мобильные устройства.
+          <br>Разработали дизайн <a href="http://webboxstd.com" target="_blank" rel="noopener noreferrer">webboxstd.com</a>. Мне оставалось заверстать и выложить на хостинг.</p>
+    </div>
+    <!-- Решение - код -->
+    <div class="case-block">
+      <h3 class="case-block-title">Мое решение в коде</h3>
+      <p>Из интерактивных элементов на странице слайдер, таймер, диалоговые окна, маска для ввода телефона и меню. Я не стал перегружать страницу лишними библиотеками, поэтому большая часть кода использует нативный JS. Чтобы пользователь сам смог настроить время отсчета и внешний вид таймера, он был взят с сайта megatimer.ru. Это было одним из условий разработки.
+          <br>На этом landing page много диалоговых окон с полями ввода контактов. Поэтому после заполнения на почту клиента уходят имя, телефон и имя формы, с которой отправили контакты.
+      </p>
+      <div class="case-triple-screen">
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/3-ton-screen1.png" alt="Экран со слайдером"></div>
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/3-ton-screen2.png" alt="Экран с диалоговым окном"></div>
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/3-ton-screen3.png" alt="Главный экран лендинга"></div>
+      </div>
+    </div>
+    <!-- Результат -->
+    <div class="case-block">
+      <h3 class="case-block-title">Результат</h3>
+      <p>По готовому дизайну был сверстан одностраничный сайт. Настроена яндекс и google-метрика, добавлен онлайн-чат. Настроена отправка писем с форм захвата контактов. <br>
+          Посмотреть копию сайта можно по этому адресу: <a href="https://prosto-o-web.ru/work/ton-aspekt" rel="nofollow">https://prosto-o-web.ru/work/ton-aspekt</a></p>
+    </div>
+    <%- require('../_partials/case-numbers.ejs')({
+      price: '10 000р.',
+      time: '7 часов',
+      year: '2015',
+      hint: '',
+    }) %>
+  </div>
+</section>
+<%- require('../_partials/case-contacts.ejs')() %>
+<%- require('../_partials/footer.ejs')() %>

@@ -1,0 +1,12 @@
+<div class="modal js-modal" data-index="<%= eventname %>">
+  <button type="button" class="modal__close js-modal-close"></button>
+  <div class="modal__header"><%= header %></div>
+  <form class="modal__content js-add-form" method="POST" name="<%= eventname %>">
+    <input type="hidden" name="type" value="<%= eventname %>" />
+    <%- require('ejs-compiled-loader!../events/' + eventname + '/index.ejs')() %>
+    <div class="modal__footer">
+      <button class="btn modal__btn -danger js-modal-close" type="button">Отмена</button>
+      <button class="btn modal__btn">Добавить</button>
+    </div>
+  </form>
+</div>

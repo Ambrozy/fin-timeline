@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="<%= htmlWebpackPlugin.options.navcolor %>">
+  <meta name="msapplication-navbutton-color" content="<%= htmlWebpackPlugin.options.navcolor %>">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header__controls">
+        <button type="button" class="link header__sorter-item -down js-sorter-date">Сортировать по дате</button>
+        <button type="button" class="link header__sorter-item -nosort js-sorter-type">Сортировать по типу</button>
+      </div>
+      <div class="header__controls">
+        <a class="header__btn btn js-add" href="#addnews" data-type="news">Добавить новость</a>
+        <a class="header__btn btn js-add" href="#addtransaction" data-type="transaction">Добавить транзакцию</a>
+      </div>
+    </div>
+    <div class="content js-content"></div>
+  </div>
+
+  <div class="modal-bg js-modal-bg"></div>
+  <div class="modal js-modal" data-index="view">
+    <button type="button" class="modal__close js-modal-close"></button>
+    <div class="modal__header"></div>
+    <div class="modal__content js-modal-content"></div>
+    <div class="modal__footer"></div>
+  </div>
+  <%= require('./_partials/form-modal.ejs')({
+    header: 'Добавление транзакции',
+    eventname: 'transaction',
+  }) %>
+  <%= require('./_partials/form-modal.ejs')({
+    header: 'Добавление Новости',
+    eventname: 'news',
+  }) %>
+</body>
+</html>

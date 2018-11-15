@@ -1,0 +1,175 @@
+@require '_normalize'
+@require '_modal'
+
+$font = 'Roboto', sans-serif
+$green = #67CD71
+$darkGreen = #52A85B
+$red = #F44E4E
+$darkRed = #C83F3F
+$linkColor = #1076C1
+
+input,
+textarea,
+select
+  width 100%
+  max-width 100%
+  margin-bottom 15px
+  font 400 1.4rem/1.5 $font
+  border 1px solid #ddd
+  border-radius 2px
+  padding 8px 10px
+
+body
+  font 400 1.4rem/1.5 $font
+  color #000
+  margin 0
+  overflow-x hidden
+  padding-top 60px
+
+.link,
+a
+  color $linkColor
+  transition opacity .3s
+
+  &:hover
+    opacity .8
+
+.btn
+  font-size 1.4rem
+  line-height 30px
+  height 30px
+  text-align center
+  color #fff
+  background $green
+  border-radius 2px
+  border 1px solid $darkGreen
+  text-decoration none
+  padding 0 14px
+  transition opacity .3s
+
+  &.-danger
+    background $red
+    border-color $darkRed
+
+  &:hover
+    opacity .8
+
+.container
+  width 100%
+  max-width 960px
+  padding 0 15px
+  margin 0 auto
+
+.link
+  text-decoration underline
+  border none
+  background none
+  padding 0
+
+.header
+  display flex
+  justify-content space-between
+  margin-bottom 14px
+
+  &__sorter-item
+    margin-right 20px
+
+    &.-down::after,
+    &.-up::after
+      content ''
+      position relative
+      display inline-block
+      vertical-align middle
+      border 5px solid transparent
+      margin-left 4px
+    &.-down::after
+      top 3px
+      border-top-color $linkColor
+    &.-up::after
+      top -3px
+      border-bottom-color $linkColor
+
+    &.-nosort::after
+      content ': Неотсортировано'
+    &.-sort::after
+      content ': Отсортировано'
+
+  &__btn
+    margin-left 20px
+
+.timeline-item
+  position relative
+  background #fff
+  border 1px solid rgba(0, 0, 0, .1)
+  box-shadow 1px 1px 7px rgba(0, 0, 0, .2)
+  padding 60px 40px 30px
+  margin-bottom 20px
+
+  &.-transaction &__type
+    background #5678F3
+
+  &.-unread
+    background #fff7d9
+
+  &.-news &__type
+    background #F35656
+
+  &__type
+    position absolute
+    top 15px
+    left 0
+    font-size 1.8rem
+    font-weight bold
+    padding 4px 20px 4px 40px
+    color #fff
+    background #777
+
+  &__title
+    font-size 1.6rem
+    font-weight bold
+    margin 10px 0
+
+  &__date
+    font-weight bold
+    margin 10px 0
+
+  &__footer
+    margin-top 20px
+
+    & > *
+      margin-right 20px
+
+.news-read
+  position relative
+  padding-left 16px
+  color $darkGreen
+
+  &::before
+    content ''
+    position absolute
+    left 0
+    top 0
+    bottom 3px
+    margin auto
+    width 12px
+    height 6px
+    border-left 2px solid $darkGreen
+    border-bottom 2px solid $darkGreen
+    transform rotate(-45deg)
+
+.form-line
+  font-weight bold
+
+  &__title
+    margin-bottom 6px
+
+.form-group
+  display flex
+  width 100%
+
+  & > *:first-child
+    border-radius 2px 0 0 2px
+
+  & > *:last-child
+    border-left none
+    border-radius 0 2px 2px 0

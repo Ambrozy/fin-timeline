@@ -1,0 +1,44 @@
+<%- require('../_partials/case-header.ejs')() %>
+<section class="case -dark">
+  <div class="container">
+    <h1 class="title">Представительство MAGIRUS в России</h1>
+    <div class="title-props">Верстка, программирование ModX</div>
+    <!-- Задача -->
+    <div class="case-block">
+      <h3 class="case-block-title">Задача от заказчика</h3>
+      <p>
+        Создать корпоративный сайт представительства Magirus в России.
+        <br>Разработали дизайн <a href="http://webboxstd.com" target="_blank" rel="noopener noreferrer">webboxstd.com</a>.
+      </p>
+    </div>
+    <!-- Решение - код -->
+    <div class="case-block">
+      <h3 class="case-block-title">Мое решение в коде</h3>
+      <p>
+        Особенность сайта: многоуровневый каталог товаров с максимальной вложенностью 4. Для каждого пункта меню требовалось подготовить и загрузить свою картинку. Последующее редактирование и замена картинок выведена в CMS.
+        <br>Нестандартный вывод карточки товара по блокам: описание, исполнение, характеристики, буклет. В каждом блоке, где требуется вводить текст в CMS был использован редактор TinyMCE.
+      </p>
+      <div class="case-triple-screen">
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/4-magirus-screen1.png" alt="Экран продукта"></div>
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/4-magirus-screen2.png" alt="Экран о компании"></div>
+        <div class="case-triple-screen__img-wrapper"><img src="../assets/4-magirus-screen3.png" alt="Главный экран сайта"></div>
+      </div>
+    </div>
+    <!-- Результат -->
+    <div class="case-block">
+      <h3 class="case-block-title">Результат</h3>
+      <p>
+        Верстка по готовому дизайну. Посадка на CMS ModX. Для каждого вида страниц в CMS создан отдельный шаблон редактирования.
+        <br>Перейти на сайт: <a href="http://www.magirus.ru/" target="_blank" rel="noopener noreferrer">http://www.magirus.ru/</a>
+      </p>
+    </div>
+    <%- require('../_partials/case-numbers.ejs')({
+      price: '37 000р.',
+      time: '5 дней*',
+      year: '2016',
+      hint: '*1,5 дня верстки и 3,5 дня интеграции с ModX без учета времени на согласования',
+    }) %>
+  </div>
+</section>
+<%- require('../_partials/case-contacts.ejs')() %>
+<%- require('../_partials/footer.ejs')() %>

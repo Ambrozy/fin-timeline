@@ -1,0 +1,99 @@
+.modal-bg
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background #000
+  opacity 0
+  transition .3s opacity
+  visibility hidden
+  z-index -1
+
+  &.-active
+    opacity .8
+    visibility visible
+    z-index 100
+
+.modal
+  position absolute !important
+  top 200px
+  left 0
+  right 0
+  background #fff
+  box-shadow 0 1px 3px rgba(0, 0, 0, .35)
+  width calc(100% - 60px)
+  max-width 480px
+  margin auto
+  visibility hidden
+  z-index -1
+
+  &.-active
+    animation-duration 1s
+    animation-fill-mode both
+    animation-name slideInDown
+    visibility visible
+    z-index 100
+
+  &__close
+    position absolute
+    top 0
+    right 0
+    width 45px
+    height 48px
+    border none
+    background #fff
+
+    &::before,
+    &::after
+      content ''
+      position: absolute
+      top 0
+      bottom 0
+      left 0
+      right 0
+      margin auto
+      width 25px
+      height 2px
+      background #000
+    &::before
+      transform rotate(45deg)
+    &::after
+      transform rotate(-45deg)
+
+  &__header
+    padding 30px 50px 10px
+    text-align center
+    font-size 1.8rem
+    font-weight bold
+
+  &__content
+    padding 0 50px
+
+    & > .modal__footer
+      padding-left 0
+      padding-right 0
+
+  &__footer
+    display flex
+    justify-content flex-end
+    padding 10px 50px 30px
+
+  &__btn
+    margin-left 15px
+    min-width 120px
+
+@keyframes slideInDown
+  from
+    transform translate3d(0, -100%, 0)
+    opacity 0
+
+  to
+    transform translate3d(0, 0, 0)
+    opacity 1
+
+@media (prefers-reduced-motion)
+  .modal-bg,
+  .modal
+    animation unset !important
+    transition none !important
