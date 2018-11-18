@@ -1,4 +1,4 @@
-# Таймлайн событий
+# Таймлайн событий Vanilla JS
 
 Демо: https://ambrozy.github.io/fin-timeline/
 
